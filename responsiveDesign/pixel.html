@@ -1,0 +1,52 @@
+<!-- use min-height to target screens that are wide enough to trigger the change, but not tall enough for it to make sense.  -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Pixel Ratio Triggers</title>
+	<style>
+		body {
+			color:white;
+			background-color: red;
+			background-image:url("images/architecture.jpg");
+			/*https://www.pexels.com/photo/panoramic-view-of-city-lit-up-at-night-311012/	*/
+
+			background-position: center; /* Center the image */
+			background-repeat: no-repeat; /* Do not repeat the image */
+			background-size: cover; /* Resize the background image to cover the entire */
+			
+			}
+
+		body:before{
+			content:"Low Resolution - Night";
+			}
+
+
+		@media only screen and (-webkit-min-device-pixel-ratio: 1.5),
+        only screen and (-o-min-device-pixel-ratio: 3/2),
+        only screen and (min--moz-device-pixel-ratio: 1.5),
+        only screen and (min-device-pixel-ratio: 1.5)  {
+			body {
+				color:white;
+				background-color: yellow;
+				background-image:url("images/architecture2.jpg");
+				/*https://www.pexels.com/photo/architecture-bay-bridge-buildings-356830/*/
+
+				background-position: center; /* Center the image */
+  				background-repeat: no-repeat; /* Do not repeat the image */
+  				background-size: cover; /* Resize the background image to cover the entire */
+			}
+			body:before{
+				content:"High Resolution - Dusk";
+			}
+		}
+	</style>
+</head>
+<body>
+	<main>
+		<h1> Pixels and Resolution</h1>
+	
+		<p> Turn the resolution on your screen from high to low to see different content and images.</p>
+	</main>
+</body>
+</html>

@@ -1,0 +1,50 @@
+
+.animation {
+	background-color: blue;
+	border: 2px solid black;
+	color: white;
+	font-size: 200%;
+	width: 200px;
+	height: 200px;
+	text-align: center;
+	line-height:200px;
+
+}
+
+.animation:hover{
+  -webkit-animation-name: wiggle;
+  -webkit-animation-duration: 1000ms;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-timing-function: ease-in-out;
+}
+
+@keyframes wiggle {
+  0% {transform: rotate(10deg);}
+  25% {transform: rotate(-10deg);}
+  50% {transform: rotate(20deg);}
+  75% {transform: rotate(-5deg);}
+  100% {transform: rotate(0deg);}
+}
+
+/*To turn this setting on, go to Preferences->Accessibility->Display
+*/
+@media (prefers-reduced-motion: reduce) {
+	body{
+		background-color: yellow;
+	}
+  .animation:hover {
+  	
+    -webkit-animation-name: none;
+  }
+}
+
+
+@media screen and (high-contrast: active) {
+  body:after { content: "test"; }
+}
+@media screen and (-ms-high-contrast: black-on-white) {
+  body:after { content: "test"; }
+}
+@media screen and (-ms-high-contrast: white-on-black) {
+  body:after { content: "test"; }
+}

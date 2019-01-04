@@ -1,0 +1,48 @@
+<!-- use min-height to target screens that are wide enough to trigger the change, but not tall enough for it to make sense.  -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Vertical Triggers</title>
+	<style>
+		body {
+				background-color: red;
+				font-size: 137.5%;
+				
+			}
+
+		body:before{
+			content:"Small screen";
+		}
+
+		@media screen and (min-width: 800px) {
+			body {
+				background-color: yellow;
+				font-size: 150%;
+				
+			}
+			body:before{
+				content:"Wide screen (only)";
+			}
+		}
+
+		@media screen and (min-width: 800px) and (min-height:500px) {
+			body {
+				background-color: green;
+				font-size: 137.5%;
+				
+			}
+			body:before{
+				content:"Wide and Tall screen";
+			}
+
+		}
+	</style>
+</head>
+<body>
+	<main>
+		<h1> Testing breakpoints</h1>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde sed, dicta ex voluptatem esse, ut quos quia culpa error aperiam eaque dolorem eius. Cumque tempore, pariatur facere amet porro eveniet.</p>
+	</main>
+</body>
+</html>
